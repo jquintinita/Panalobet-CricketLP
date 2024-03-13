@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../img/background-full-width.jpg);
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+   
+}
+.coin-1{
+    position: absolute;
+    top: -20px;
+    right: 0vw;
+    display: block;
+    max-width: 100px;
+    z-index: 1;
+}
+.coin-2{
+    position: absolute;
+    top: 55%;
+    right:3%;
+    display: block;
+    max-width: 60px;
+    z-index: 999;
+}
+.coin-3{
+    position: absolute;
+    top: 45%;
+    left:20px;
+    display: block;
+    max-width: 60px;
+}
+
+.coin-4{
+    position: absolute;
+    bottom: -80px;
+    right: 30%;
+    display: block;
+    z-index: 999;
+    max-width: auto;
+    
+}
+.container{
+    max-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+    display: block;
+    overflow-y: hidden;
+}
+.header{
+    padding-top: 30px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 99;
+}
+.header img{
+    max-width: 100%;
+    height: auto;
+}
+.header .logo{
+    max-width: 40vw;
+}
+.header .flag{
+    max-width: 10vw;
+}
+.text-wrapper{
+    max-width: 75vw;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10vw;
+    display: block;
+    position: relative;
+    z-index: 999;
+}
+.text-wrapper img{
+    max-width: 100%;
+    height: auto;
+}
+.img-wrapper{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 100px;
+}
+.img-wrapper img{
+    max-width: 100%;
+    height: auto;
+}
+.debris{
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+
+.wheel-of-fortune{
+    max-width: 280px;
+    flex: 0 40%;
+    margin: 0 auto;
+    transform: translate(0, 0);
+}
+
+.player{
+    flex: 0 100%;
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+}
+
+.img-wrapper .cricket-player{
+    max-width: 500px;
+    height: auto;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wheel-of-fortune .wheel{
+    position: absolute;
+    top: 10%;
+    left: 9%;
+    width: 80%;
+    animation: rotateWheel 2s linear infinite;
+}
+.wheel-of-fortune .stand{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .player::after{
+        background-image: url(../img/gold-coins.png?v=1.2);
+        width: 100%;
+        height: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 50px;
+        left:0;
+        z-index: 999;
+     }
+}
+
+
+
+
+@keyframes rotateWheel {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+:root{
+    --topPostion: 0px;
+}
+@keyframes beat{
+	to { transform: scale(1.08); }
+}
+
+@keyframes levitate {
+	0% {
+		transform: translateY(calc(var(--topPostion)));
+	}
+	50% {
+		transform: translateY(calc(var(--topPostion) + 15px));
+	}
+	100% {
+		transform: translateY(calc(var(--topPostion)));
+	}
+}
+
+
+@media screen and (min-width: 767px) {
+    body{
+
+        background-position: center top;
+
+       
+    }
+     .container{
+        overflow-y: hidden;
+     }
+    .header .logo{
+        max-width: 220px;
+    }
+    .header .flag{
+        max-width: 50px;
+    }
+    .text-wrapper{
+        max-width: 390px;
+        margin-bottom: 00px;
+    }
+    .img-wrapper{
+        flex-direction: row;
+        padding-bottom: 0;
+    }
+    .wheel-of-fortune::after{
+        background-image: url(../img/gold-coins.png?v=1.2);
+        width: 100%;
+        height: 15vw;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .wheel-of-fortune{
+        max-width: 500px;
+        flex: 0 40%;
+        position: relative;
+        transform: translate(80px, 33px)
+    }
+    .player{
+        flex: 0 60%;
+        position: relative;
+        left: unset;
+        transform: unset;
+    }
+    .img-wrapper .cricket-player{
+        max-width: 550px;
+        height: auto;
+        width: 100%;
+        margin-left: -150px;
+        z-index: 9;
+        position: relative;
+    }
+    .coin-4{
+        bottom: -30px;
+    }
+    .wheel-of-fortune .wheel {
+        position: absolute;
+        top: 8%;
+        left: 9%;
+        width: 80%;
+        animation: rotateWheel 2s linear infinite;
+    }
+}
